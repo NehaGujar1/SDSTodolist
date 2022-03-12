@@ -42,10 +42,17 @@ function showTasks(){
     newLiTag += `<li><input type="checkbox" id=${index}><label for=${index} class="a"> ${element}</label><span class="icon" onclick="deleteTask(${index})"><i class="fas fa-trash-alt"></i></span></li>`;
   });
   const pendingTasksNumb = document.querySelector(".pendingTasks");
-  /*var count = 0;
-  element.addEventListener("check", function(){
+  
+  if(listArray.length){
+    pendingTasksNumb.textContent = listArray.length;
+  }
+  else{
+    pendingTasksNumb.textContent = 0;
+  }
+  var count = 0;
+  /*element.addEventListener("check", function(){
   count++;} ); */
-  pendingTasksNumb.textContent = listArray.length//-count; //passing the array length in pendingtask
+   //passing the array length in pendingtask
   if(listArray.length > 0){ //if array length is greater than 0
     deleteAllBtn.classList.add("active"); //active the delete button
   }else{
@@ -57,10 +64,17 @@ function showTasks(){
   inputBox.value = ""; //once task added leave the input field blank
   listArray.forEach((element,index) => {
     let checkbox = document.getElementById(index);
-    checkbox.addEventListener("click",(e)=>{
-      console.log(e);
-      //if()
-    })
+    checkbox.addEventListener("change",(e)=>{
+      
+      if(e.target.checked){
+        count--;
+      }
+      else{
+        count++;
+      }
+      pendingTasksNumb.textContent = listArray.length+count;
+    });
+
   });
 }
 
