@@ -50,15 +50,12 @@ function showTasks(){
     pendingTasksNumb.textContent = 0;
   }
   var count = 0;
-  /*element.addEventListener("check", function(){
-  count++;} ); */
-   //passing the array length in pendingtask
+  
   if(listArray.length > 0){ //if array length is greater than 0
     deleteAllBtn.classList.add("active"); //active the delete button
   }else{
     deleteAllBtn.classList.remove("active"); //unactive the delete button
-  }//var pendingTasksNum = listArray.length;
-  //pendingTasksNumb.textContent = Reducepend(pendingTasksNum,listArray.length);
+  }
   
   todoList.innerHTML = newLiTag; //adding new li tag inside ul tag
   inputBox.value = ""; //once task added leave the input field blank
@@ -78,35 +75,7 @@ function showTasks(){
   });
 }
 
-/*function Reducepend(k){
-  var sm = 0;
-  //var s1= "";
-  for(i=0;i<k;i++){
-    //s1 =i+"a";
-  if (i.checked)
-  sm++;
-  }
-  
-  return sm;
-}
-var list = document.querySelector('ul');
-list.addEventListener('click', function(ev) {
-  if (ev.target.tagName === 'LI') {
-    ev.target.classList.toggle('checked');
-  }
-}, false);
-function Pendtask(){
-var i=0;
-var j=0;
-for(;i<listArray.length;i++){
-  s1 = i;
-var ele = document.getElementById(s1);
-var isStruck = (ele.style.getProperty("text-decoration") == "line-through");
-if(isStruck)
-j++;
-}
-return j;
-}*/
+
 // delete task function
 function deleteTask(index){
   let getLocalStorageData = localStorage.getItem("New Todo");
