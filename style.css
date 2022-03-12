@@ -138,10 +138,5 @@ input[type=checkbox]:checked + label.a{
   opacity: 1;
   pointer-events: auto;
 }
-/* When clicked on, add a background color and strike out text */
-ul li.checked {
-  background: #888;
-  color: #fff;
-  text-decoration: line-through;
-}
+
 
